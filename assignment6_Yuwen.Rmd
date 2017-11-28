@@ -39,4 +39,4 @@ table(M2$certified, M2$predict2)
 (943+4330)/(3590+1137+943+4330)
 ```
 
-# I think it automatically uses forum.posts as the only variable but the result is not that bad. The tree is the same cause it might be unable to be pruned any more? 
+# I think it automatically uses forum.posts as the only variable but the result is not that bad. The tree is the same cause it might be unable to be pruned any more?
