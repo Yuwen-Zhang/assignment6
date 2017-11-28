@@ -6,7 +6,7 @@ M2 <- read.csv("MOOC2.csv", header = TRUE)
 ```
 
 ```{r}
-c.tree1 <- rpart(formula = certified ~ forum.posts + grade + assignment, 
+c.tree1 <- rpart(formula = certified ~  grade + assignment, 
     data = M1, method = "class")
 ```
 
@@ -14,15 +14,15 @@ c.tree1 <- rpart(formula = certified ~ forum.posts + grade + assignment,
 printcp(c.tree1)
 ```
 ```{r}
-post(c.tree1, file = "tree1.ps", title = "MOOC")
+post(c.tree1, file = "", title = "MOOC")
 ```
 
 ```{r}
-c.tree2 <- prune(c.tree1, cp = 0.001)#Set cp to the level at which you want the tree to end
+c.tree2 <- prune(c.tree1, cp = 0.0001)#Set cp to the level at which you want the tree to end
 
 #Visualize this tree and compare it to the one you generated earlier
 
-post(c.tree2, file = "tree2.ps", title = "MOOC")
+post(c.tree2, file = "", title = "MOOC")
 ```
 
 ```{r}
@@ -39,4 +39,4 @@ table(M2$certified, M2$predict2)
 (943+4330)/(3590+1137+943+4330)
 ```
 
-# I think it automatically uses forum.posts as the only variable but the result is not that bad. The tree is the same cause it might be unable to be pruned any more?
+# feels like using forum.posts as the only variable is even easier than using these 2 variables...? The error is almost the same... Btw, why I don't think tree1 needs to be pruned any more?
